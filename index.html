@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Buku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-500 text-white py-4 px-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Perpustakaan Digital</h1>
+    <button id="open-modal" class="bg-white text-blue-500 px-4 py-2 rounded hover:bg-gray-100">Tambah Buku</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="py-12 px-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Daftar Buku</h2>
+    <div id="book-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Buku akan dimasukkan secara dinamis di sini -->
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
+      <h2 class="text-xl font-bold mb-4">Tambah Buku</h2>
+      <form id="add-book-form">
+        <div class="mb-4">
+          <label for="title" class="block text-gray-700">Judul Buku</label>
+          <input id="title" type="text" class="w-full p-2 border rounded-md" required>
+        </div>
+        <div class="mb-4">
+          <label for="author" class="block text-gray-700">Pengarang</label>
+          <input id="author" type="text" class="w-full p-2 border rounded-md" required>
+        </div>
+        <div class="mb-4">
+            <label for="publisher" class="block text-gray-700">Penerbit</label>
+            <input id="publisher" type="text" class="w-full p-2 border rounded-md" required>
+          </div>
+        <div class="mb-4">
+          <label for="category" class="block text-gray-700">Kategori</label>
+          <input id="category" type="text" class="w-full p-2 border rounded-md" required>
+        </div>
+        <div class="mb-4">
+          <label for="description" class="block text-gray-700">Deskripsi</label>
+          <textarea id="description" class="w-full p-2 border rounded-md"></textarea>
+        </div>
+        <div class="flex justify-end space-x-4">
+          <button type="button" id="close-modal" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">Batal</button>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Simpan</button>
+        </div>
+        <div class="mb-4">
+            <label for="availability" class="block text-gray-700">Status</label>
+            <select id="availability" class="w-full p-2 border rounded-md">
+              <option value="Tersedia">Tersedia</option>
+              <option value="Dipinjam">Dipinjam</option>
+            </select>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-500 text-white text-center py-4">
+    <p>&copy; 2024 Perpustakaan Digital P16</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
