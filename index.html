@@ -3,69 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Buku</title>
+  <title>Perpustakaan Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
   <!-- Header -->
-  <header class="bg-blue-500 text-white py-4 px-6 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Perpustakaan Digital</h1>
-    <button id="open-modal" class="bg-white text-blue-500 px-4 py-2 rounded hover:bg-gray-100">Tambah Buku</button>
+  <header class="bg-green-700 text-white py-5 px-8 flex justify-between items-center shadow-lg">
+    <div class="flex items-center space-x-4">
+      <img src="https://via.placeholder.com/50" alt="Logo" class="h-12 rounded-full">
+      <div>
+        <h1 class="text-2xl font-bold">PERPUSTAKAAN DIGITAL</h1>
+        <h2 class="text-sm">Kota Literasi</h2>
+      </div>
+    </div>
+    <nav class="space-x-8 text-sm uppercase tracking-wider">
+      <a href="#" class="hover:text-gray-200">Home</a>
+      <a href="#" class="hover:text-gray-200">Buku</a>
+      <a href="#" class="hover:text-gray-200">Tentang Kami</a>
+      <a href="#" class="hover:text-gray-200">Bantuan</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="py-12 px-6">
-    <h2 class="text-2xl font-bold text-gray-800 mb-6">Daftar Buku</h2>
-    <div id="book-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Buku akan dimasukkan secara dinamis di sini -->
-    </div>
-  </main>
+  <!-- Content Layout -->
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-1/4 bg-gray-200 py-8 px-6 border-r">
+      <div class="space-y-8">
+        <div>
+          <img src="https://via.placeholder.com/100" alt="Login" class="mx-auto mb-2">
+          <h3 class="text-center font-semibold text-lg">Login Anggota</h3>
+          <p class="text-center text-sm text-gray-600">Silakan login untuk akses penuh.</p>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/100" alt="Katalog Buku" class="mx-auto mb-2">
+          <h3 class="text-center font-semibold text-lg">Katalog Buku</h3>
+          <p class="text-center text-sm text-gray-600">Cari koleksi buku kami.</p>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/100" alt="Katalog Penelitian" class="mx-auto mb-2">
+          <h3 class="text-center font-semibold text-lg">Katalog Penelitian</h3>
+          <p class="text-center text-sm text-gray-600">Temukan penelitian terkini.</p>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/100" alt="Daftar Buku Favorit" class="mx-auto mb-2">
+          <h3 class="text-center font-semibold text-lg">Buku Terfavorit</h3>
+          <p class="text-center text-sm text-gray-600">Buku paling banyak diminati.</p>
+        </div>
+      </div>
+    </aside>
 
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
-      <h2 class="text-xl font-bold mb-4">Tambah Buku</h2>
-      <form id="add-book-form">
-        <div class="mb-4">
-          <label for="title" class="block text-gray-700">Judul Buku</label>
-          <input id="title" type="text" class="w-full p-2 border rounded-md" required>
+    <!-- Main Content -->
+    <main class="flex-1 bg-white p-8">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Selamat Datang</h1>
+        <p class="text-lg text-gray-600 mt-2">Di Perpustakaan Digital Kota Literasi</p>
+      </div>
+      <div class="flex justify-center mb-6">
+        <img src="https://via.placeholder.com/400x200" alt="Library" class="rounded shadow-md">
+      </div>
+      <p class="text-gray-700 text-center mb-6">
+        Perpustakaan ini menyediakan berbagai macam koleksi buku, penelitian, dan data lainnya untuk mendukung literasi masyarakat.
+      </p>
+      <div class="flex justify-center space-x-12">
+        <div>
+          <h3 class="text-xl font-bold text-green-700 mb-2">Visi</h3>
+          <p class="text-sm text-gray-600">Meningkatkan budaya baca di masyarakat.</p>
         </div>
-        <div class="mb-4">
-          <label for="author" class="block text-gray-700">Pengarang</label>
-          <input id="author" type="text" class="w-full p-2 border rounded-md" required>
+        <div>
+          <h3 class="text-xl font-bold text-green-700 mb-2">Misi</h3>
+          <p class="text-sm text-gray-600">Menyediakan akses mudah ke literatur berkualitas.</p>
         </div>
-        <div class="mb-4">
-            <label for="publisher" class="block text-gray-700">Penerbit</label>
-            <input id="publisher" type="text" class="w-full p-2 border rounded-md" required>
-          </div>
-        <div class="mb-4">
-          <label for="category" class="block text-gray-700">Kategori</label>
-          <input id="category" type="text" class="w-full p-2 border rounded-md" required>
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="w-1/4 bg-gray-200 py-8 px-6 border-l">
+      <div class="space-y-6">
+        <div>
+          <input type="text" placeholder="Cari buku..." class="w-full p-3 rounded border border-gray-300">
         </div>
-        <div class="mb-4">
-          <label for="description" class="block text-gray-700">Deskripsi</label>
-          <textarea id="description" class="w-full p-2 border rounded-md"></textarea>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Judul Buku</h3>
+          <ul class="text-gray-600 space-y-1">
+            <li>Buku A</li>
+            <li>Buku B</li>
+            <li>Buku C</li>
+          </ul>
         </div>
-        <div class="flex justify-end space-x-4">
-          <button type="button" id="close-modal" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">Batal</button>
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Simpan</button>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Genre</h3>
+          <ul class="text-gray-600 space-y-1">
+            <li>Fiksi</li>
+            <li>Non-Fiksi</li>
+            <li>Biografi</li>
+          </ul>
         </div>
-        <div class="mb-4">
-            <label for="availability" class="block text-gray-700">Status</label>
-            <select id="availability" class="w-full p-2 border rounded-md">
-              <option value="Tersedia">Tersedia</option>
-              <option value="Dipinjam">Dipinjam</option>
-            </select>
-          </div>
-      </form>
-    </div>
+        <div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Penulis</h3>
+          <ul class="text-gray-600 space-y-1">
+            <li>Penulis A</li>
+            <li>Penulis B</li>
+            <li>Penulis C</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-blue-500 text-white text-center py-4">
-    <p>&copy; 2024 Perpustakaan Digital P16</p>
+  <footer class="bg-green-700 text-white text-center py-4 mt-6">
+    <p>&copy; 2024 Perpustakaan Digital</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
